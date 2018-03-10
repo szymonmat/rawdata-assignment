@@ -34,9 +34,22 @@ namespace EchoServer
                 //Data processing setup
                 List<string> errorList = new List<string>();
                 var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
-                var request = JsonConvert.DeserializeObject<Request>(payload);
+                var request = new Request();
                 var response = new Response();
                 String errorString = "";
+                //Handle corrupted request
+                try
+                {
+                    request = JsonConvert.DeserializeObject<Request>(payload);
+                }
+                catch
+                {
+                    response.Status = "6 Error";
+                    response.Body = "wrong request format provided"; 
+                    var errres= Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
+                    Console.WriteLine(errres.Length);
+                    strm.Write(errres, 0 ,errres.Length);
+                }
 
                 //Validate for mandatory elements (mehtod, date, path)
                 if (request.Method == null)
@@ -70,7 +83,7 @@ namespace EchoServer
                 else
                 {
                     //Evaluate type of request, and execute appropriate code
-                    switch (request.Method)
+                    switch (request.Method.ToLower())
                     {
                         case "read":
 
@@ -93,10 +106,12 @@ namespace EchoServer
                             else
                             {
                                 response.Status = "4 Bad Request";
-                                response.Body = "4 missing body";
+                                response.Body = "missing body";
                             }
-                            Console.WriteLine(JsonConvert.SerializeObject(response));
-
+                            break;
+                        default:
+                            response.Status = "4 Bad Request";
+                            response.Body = "illegal method";
                             break;
                     }
                 }

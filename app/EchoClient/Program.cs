@@ -11,7 +11,6 @@ namespace EchoClient
     {
         static void Main(string[] args)
         {
-
             var client = new TcpClient();
             client.Connect(IPAddress.Parse("127.0.0.1"), 5000);
 
@@ -19,7 +18,7 @@ namespace EchoClient
 
             var request = new Request
             {
-                Method = "echo",
+                Method = "Post",
                 Path = "/api/proc",
                 Date = 1507318869,
                 Body = "hello"
@@ -37,13 +36,17 @@ namespace EchoClient
             var res = Encoding.UTF8.GetString(buffer, 0, readCnt);
 
             Console.WriteLine(res);
-            strm.Close();
-            while (!(Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape))
-            {
-                // do something
-            }
-            client.Dispose();
 
+            strm.Close();
+
+            client.Dispose();
+            do
+            {
+                while (!Console.KeyAvailable)
+                {
+                    // Do something
+                }
+            } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
     }
 }

@@ -1,0 +1,14 @@
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.deps.json
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.json
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.dev.json
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.dll
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.pdb
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.dll
+E:\rawdataa\app\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.pdb
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CoreCompileInputs.cache
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfoInputs.cache
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfo.cs
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CopyComplete
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.dll
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.pdb
+E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csprojResolveAssemblyReference.cache

@@ -1,6 +1,7 @@
 ﻿using DomainModel;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -18,7 +19,7 @@ namespace EchoServer
             Console.WriteLine("Server started ...");
 
 
-            while(true)
+            while (true)
             {
                 var client = server.AcceptTcpClient();
 
@@ -29,17 +30,63 @@ namespace EchoServer
 
                 var payload = Encoding.UTF8.GetString(buffer, 0, readCnt);
                 var request = JsonConvert.DeserializeObject<Request>(payload);
+                var response = new Response();
+                Console.WriteLine(request.Method);
+                String errorString = "";
+                List<string> errorList = new List<string>();
 
-                Console.WriteLine(request.Body);
+                //Validate for mandatory elements (mehtod, date, path)
+                if (request.Method == null)
+                {
+                    errorList.Add("missing body");
+                }
+                if (request.Date==0)
+                {
+                    errorList.Add("missing date");
+                }
+                if (request.Path == null)
+                {
+                    errorList.Add("missing path");
+                }
 
-                var res = Encoding.UTF8.GetBytes(request.Body.ToUpper());
+                else
+                {
+                    //Evaluate type of request, and execute appropriate code
+                    switch (request.Method)
+                    {
+                        case "read":
 
+                            break;
+                        case "update":
+
+                            break;
+                        case "create":
+
+                            break;
+                        case "delete":
+
+                            break;
+                        case "echo":
+                            if (request.Body != null)
+                            {
+                                response.Status = "1 Ok";
+                                response.Body = request.Body;
+                            }
+                            else
+                            {
+                                response.Status = "4 Bad Request";
+                                response.Body = "4 missing body";
+                            }
+                            Console.WriteLine(JsonConvert.SerializeObject(response));
+
+                            break;
+                    }
+                }
+                var res = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(response));
                 strm.Write(res, 0, res.Length);
-
-            }
-
-            //server.Stop();
-
+             }
         }
+            //server.Stop();
     }
 }
+

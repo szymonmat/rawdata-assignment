@@ -1,0 +1,9 @@
+E:\rawdataa\app\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.deps.json
+E:\rawdataa\app\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.dll
+E:\rawdataa\app\DomainModel\bin\Debug\netcoreapp2.0\DomainModel.pdb
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csproj.CoreCompileInputs.cache
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfoInputs.cache
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
+E:\rawdataa\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb

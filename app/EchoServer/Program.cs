@@ -155,9 +155,35 @@ namespace EchoServer
 
                             break;
                         case "delete":
+                              var values1 = getPathValues(request.Path);
 
+                            if (values1.Length == 2)
+                            {
+                                //First we check if second param is a valid int
+                                int val;
+                                bool eval = Int32.TryParse(values1[1], out val);
+
+                                //Loop through all objects in db and find one with appropriate id
+                                if (eval)
+                                {
+                                    for (var i = 0; i < database.Count; i++)
+                                    {
+                                        if (database[i].Cid == val)
+                                        {
+                                            database.Remove(database[i]);
+
+                                        }
+                                        else
+                                        {
+                                            response.Status = "5 Not Found";
+                                            response.Body = "Bad path";
+                                        }
+                                    }
+                                }
+                                }
                             break;
                         case "echo":
+
                             if (request.Body != null)
                             {
                                 response.Status = "1 Ok";

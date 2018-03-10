@@ -18,8 +18,8 @@ namespace EchoClient
 
             var request = new Request
             {
-                Method = "Post",
-                Path = "/api/proc",
+                Method = "read",
+                Path = "/categories",
                 Date = 1507318869,
                 Body = "hello"
             };

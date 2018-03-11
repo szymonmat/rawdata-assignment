@@ -1,0 +1,14 @@
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\xunit.runner.utility.netstandard15.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\xunit.runner.reporters.netstandard15.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\Assignment3TestSuite.deps.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\Assignment3TestSuite.runtimeconfig.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\Assignment3TestSuite.runtimeconfig.dev.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\Assignment3TestSuite.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\bin\Debug\netcoreapp2.0\Assignment3TestSuite.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.AssemblyInfoInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.AssemblyInfo.cs
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\test\Assignment3TestSuite\obj\Debug\netcoreapp2.0\Assignment3TestSuite.pdb

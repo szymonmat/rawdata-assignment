@@ -12,3 +12,17 @@ E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CopyComplet
 E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.dll
 E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.pdb
 E:\rawdataa\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.deps.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.runtimeconfig.dev.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\EchoClient.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfoInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.AssemblyInfo.cs
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.csproj.CopyComplete
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoClient\obj\Debug\netcoreapp2.0\EchoClient.pdb

@@ -122,7 +122,7 @@ namespace Assignment3TestSuite
                 Method = "update",
                 Path = "testing",
                 Date = DateTimeOffset.Now.ToString(),
-                Body = (new { cid = 1, Name = "Beverages"}).ToJson()
+                Body = (new { cid = 1, Name = "Beverages" }).ToJson()
             };
 
             client.SendRequest(request.ToJson());
@@ -154,7 +154,7 @@ namespace Assignment3TestSuite
             Assert.Contains("missing body", response.Status.ToLower());
         }
 
-        
+
         [Fact]
         public void Constraint_RequestUpdateWithoutJsonBody_IllegalBodyError()
         {
@@ -218,7 +218,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response { Status = "4 Bad Request" };
 
             Assert.Equal(expectedResponse.ToJson().ToLower(), response.ToJson().ToLower());
@@ -238,7 +238,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response { Status = "4 Bad Request" };
 
             Assert.Equal(expectedResponse.ToJson().ToLower(), response.ToJson().ToLower());
@@ -259,7 +259,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response { Status = "4 Bad Request" };
 
             Assert.Equal(expectedResponse.ToJson().ToLower(), response.ToJson().ToLower());
@@ -280,7 +280,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response { Status = "4 Bad Request" };
 
             Assert.Equal(expectedResponse.ToJson().ToLower(), response.ToJson().ToLower());
@@ -300,7 +300,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response { Status = "4 Bad Request" };
 
             Assert.Equal(expectedResponse.ToJson().ToLower(), response.ToJson().ToLower());
@@ -324,7 +324,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var categories = new List<object>
             {
                 new {cid = 1, name = "Beverages"},
@@ -355,7 +355,7 @@ namespace Assignment3TestSuite
 
             client.SendRequest(request.ToJson());
             var response = client.ReadResponse();
-            
+
             var expectedResponse = new Response
             {
                 Status = "1 Ok",
@@ -635,7 +635,7 @@ namespace Assignment3TestSuite
                     memStream.Write(resp, 0, bytesread);
 
                 } while (bytesread == 2048);
-                
+
                 var responseData = Encoding.UTF8.GetString(memStream.ToArray());
                 return JsonConvert.DeserializeObject<Response>(responseData);
             }

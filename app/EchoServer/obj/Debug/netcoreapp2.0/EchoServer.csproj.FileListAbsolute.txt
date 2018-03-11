@@ -12,3 +12,17 @@ E:\rawdataa\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfo.cs
 E:\rawdataa\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CopyComplete
 E:\rawdataa\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.dll
 E:\rawdataa\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.deps.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.runtimeconfig.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.runtimeconfig.dev.json
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\EchoServer.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\bin\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csprojResolveAssemblyReference.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CoreCompileInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfoInputs.cache
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.AssemblyInfo.cs
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.csproj.CopyComplete
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.dll
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\EchoServer\obj\Debug\netcoreapp2.0\EchoServer.pdb

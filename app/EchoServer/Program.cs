@@ -153,7 +153,39 @@ namespace EchoServer
                             break;
                         case "create":
 
-                            break;
+                            var values2 = getPathValues(request.Path);
+                            //The user only needs to select the whole table
+                            if (request.Path.Contains("categories"))
+                            {
+                                if (values2.Length == 1)
+                                {
+                                    var newId = database[database.Count - 1].Cid + 1;
+
+
+                                    database.Add(new Category { Cid = newId, Name = request.Body });
+
+                                    var result = JsonConvert.SerializeObject(database[database.Count - 1]);
+                                    Console.WriteLine(result);
+                                    response.Status = "1 Ok";
+                                    response.Body = result;
+
+
+                                }
+                                else
+                                {
+                                    response.Status = "4 Bad Request";
+                                    response.Body = "illegal parameter: id";
+
+                                }
+
+                            }
+                            else
+                            {
+                                response.Status = "4 Bad Request";
+                                response.Body = "illegal path choose right table";
+                            }
+
+                                break;
                         case "delete":
                               var values1 = getPathValues(request.Path);
 

@@ -18,8 +18,8 @@ namespace EchoClient
 
             var request = new Request
             {
-                Method = "read",
-                Path = "/categories",
+                Method = "delete",
+                Path = "/categories/123",
                 Date = 1507318869,
                 Body = "hello"
             };

@@ -192,12 +192,11 @@ namespace EchoServer
                             if (values1.Length == 2)
                             {
                                 //First we check if second param is a valid int
-                               
-                                bool eval = Int32.TryParse(values1[1], out int val);
-
+                                int val;
+                                bool eval = Int32.TryParse(values1[1], out val);
 
                                 //Loop through all objects in db and find one with appropriate id
-                                if (eval)  
+                                if (eval)
                                 {
                                     for (var i = 0; i < database.Count; i++)
                                     {
@@ -214,11 +213,6 @@ namespace EchoServer
                                     }
                                 }
                                 }
-                            else
-                            {
-                                response.Status = "5 not found";
-                                response.Body = "id not found ";
-                            }
                             break;
                         case "echo":
 

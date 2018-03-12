@@ -72,12 +72,20 @@ namespace EchoServer
                 }
                 if (request.Date == 0)
                 {
+                   
+                   
                    errorList.Add("missing date");
                 }
                 if (request.Path == null)
                 {
-                    errorList.Add("missing path");
+                  if(request.Method.Contains("echo"))
+                    {
+                        goto SkipPath;
+                    }
+                        errorList.Add("missing path");
+                    SkipPath:;
                 }
+               
                 //If any of critical elements are missing generate error message, otherwise start evaluationg methods
                 if (errorList.Count > 0) {
                     var l = errorList.Count;
@@ -176,7 +184,7 @@ namespace EchoServer
                                 else
                                 {
                                     response.Status = "4 Bad Request";
-                                    response.Body = "illegal parameter: id";
+                                    response.Body = null;
 
                                 }
 
@@ -234,8 +242,8 @@ namespace EchoServer
                             }
                             break;
                         default:
-                            response.Status = "4 Bad Request";
-                            response.Body = "illegal method";
+                            response.Status = "Illegal method";
+                            response.Body = "4 Bad Request, illegal method";
                             break;
                     }
                 }

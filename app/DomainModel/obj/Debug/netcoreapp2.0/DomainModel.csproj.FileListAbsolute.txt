@@ -15,3 +15,4 @@ C:\Users\Lucas\Source\Repos\rawdata-assignment\app\DomainModel\obj\Debug\netcore
 C:\Users\Lucas\Source\Repos\rawdata-assignment\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.AssemblyInfo.cs
 C:\Users\Lucas\Source\Repos\rawdata-assignment\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.dll
 C:\Users\Lucas\Source\Repos\rawdata-assignment\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.pdb
+C:\Users\Lucas\Source\Repos\rawdata-assignment\app\DomainModel\obj\Debug\netcoreapp2.0\DomainModel.csprojResolveAssemblyReference.cache

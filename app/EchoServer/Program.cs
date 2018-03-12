@@ -149,13 +149,13 @@ namespace EchoServer
                                 }
                                 else {
                                     response.Status = "4 Bad Request";
-                                    response.Body = "illegal parameter: id";
+                                    response.Body = null;
                                 }
                             }
 
                             else {
-                                response.Status = "4 Bad Request";
-                                response.Body = "illegal path";
+                                response.Status = "5 bad request";
+                                response.Body = null;
                             }
                             break;
                         case "update":
@@ -183,7 +183,7 @@ namespace EchoServer
                                 }
                                 else
                                 {
-                                    response.Status = "4 Bad Request";
+                                    response.Status = "4 bad request";
                                     response.Body = null;
 
                                 }
@@ -199,7 +199,7 @@ namespace EchoServer
                         case "delete":
                               var values1 = getPathValues(request.Path);
 
-                            if (values1.Length == 2)
+                            if (values1.Length !=2 && values1.Length !=3)
                             {
                                 //First we check if second param is a valid int
                                 int val;
@@ -217,7 +217,7 @@ namespace EchoServer
                                         }
                                         else
                                         {
-                                            response.Status = "5 Not Found";
+                                            response.Status = "4 Not Found";
                                             response.Body = "Bad path";
                                         }
                                     }
@@ -225,7 +225,7 @@ namespace EchoServer
                                 }
                             else
                             {
-                                response.Status = "5 Not Found";
+                                response.Status = "5 not found";
                             }
                             break;
                         case "echo":

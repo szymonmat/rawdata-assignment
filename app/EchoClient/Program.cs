@@ -27,12 +27,9 @@ namespace EchoClient
             var request = new Request
             {
 
-
                 Method = "delete",
-              
-                Date = UnixTimestamp(),
-                
-
+                Path = "/api/categories",
+                Date = UnixTimestamp()
 
             };
             //Validate recieved string first

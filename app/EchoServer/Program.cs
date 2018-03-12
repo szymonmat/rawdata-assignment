@@ -154,7 +154,7 @@ namespace EchoServer
                             }
 
                             else {
-                                response.Status = "5 bad request";
+                                response.Status = "5 not found";
                                 response.Body = null;
                             }
                             break;

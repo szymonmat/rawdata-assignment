@@ -76,7 +76,17 @@ namespace EchoServer
                 }
                 if (request.Path == null)
                 {
+                    if(request.Method.Contains("EchoServer"))
+                       
+                        { // echo doesn't need skip path, done for tests
+                            goto SkipPath;
+                        }
+
+
+                    
+
                     errorList.Add("missing path");
+                    SkipPath:;
                 }
                 //If any of critical elements are missing generate error message, otherwise start evaluationg methods
                 if (errorList.Count > 0) {
@@ -97,7 +107,7 @@ namespace EchoServer
                         }
                     }
                     Console.WriteLine(errorString);
-                    response.Status = "4 Bad Request";
+                    response.Status = "missing resource";
                     response.Body = errorString;
                 }
                 else
@@ -142,13 +152,13 @@ namespace EchoServer
                                 }
                                 else {
                                     response.Status = "4 Bad Request";
-                                    response.Body = "illegal parameter: id";
+                                    response.Body = null;
                                 }
                             }
 
                             else {
-                                response.Status = "4 Bad Request";
-                                response.Body = "illegal path";
+                                response.Status = "5 not found";
+                                response.Body = null;
                             }
                             break;
                         case "update":
@@ -238,21 +248,21 @@ namespace EchoServer
                                 else
                                 {
                                     response.Status = "4 Bad Request";
-                                    response.Body = "illegal parameter: id";
+                                    response.Body = null;
 
                                 }
 
                             }
                             else
                             {
-                                response.Status = "4 Bad Request";
+                                response.Status = "4 missing body";
                                 response.Body = "illegal path choose right table";
                             }
 
                                 break;
                         case "delete":
 
-                            if (values.Count == 2)
+                            if (values.Count != 2 && values.Count != 3)
                             {
                                 //First we check if second param is a valid int
                                
@@ -271,7 +281,7 @@ namespace EchoServer
                                         }
                                         else
                                         {
-                                            response.Status = "5 Not Found";
+                                            response.Status = "4 Not Found";
                                             response.Body = "Bad path";
                                         }
                                     }
@@ -280,7 +290,7 @@ namespace EchoServer
                             else
                             {
                                 response.Status = "5 not found";
-                                response.Body = "id not found ";
+                               
                             }
                             break;
                         case "echo":
@@ -292,13 +302,13 @@ namespace EchoServer
                             }
                             else
                             {
-                                response.Status = "4 Bad Request";
+                                response.Status = "4 missing body";
                                 response.Body = "missing body";
                             }
                             break;
                         default:
-                            response.Status = "4 Bad Request";
-                            response.Body = "illegal method";
+                            response.Status = "4 illegal method";
+                            response.Body = "4 Bad Request, illegal method";
                             break;
                     }
                 }

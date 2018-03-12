@@ -10,6 +10,8 @@ namespace EchoServer
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
             var addr = IPAddress.Parse("127.0.0.1");
@@ -70,7 +72,7 @@ namespace EchoServer
                 }
                 if (request.Date == 0)
                 {
-                    errorList.Add("missing date");
+                   errorList.Add("missing date");
                 }
                 if (request.Path == null)
                 {
@@ -95,7 +97,7 @@ namespace EchoServer
                         }
                     }
                     Console.WriteLine(errorString);
-                    response.Status = "4 Bad Request";
+                    response.Status = "missing resource";
                     response.Body = errorString;
                 }
                 else
@@ -181,7 +183,7 @@ namespace EchoServer
                             }
                             else
                             {
-                                response.Status = "4 Bad Request";
+                                response.Status = "4 missing body";
                                 response.Body = "illegal path choose right table";
                             }
 
@@ -213,6 +215,10 @@ namespace EchoServer
                                     }
                                 }
                                 }
+                            else
+                            {
+                                response.Status = "5 Not Found";
+                            }
                             break;
                         case "echo":
 
@@ -223,7 +229,7 @@ namespace EchoServer
                             }
                             else
                             {
-                                response.Status = "4 Bad Request";
+                                response.Status = "4 Missing body";
                                 response.Body = "missing body";
                             }
                             break;

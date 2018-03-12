@@ -1,5 +1,6 @@
 ﻿using DomainModel;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Net;
 using System.Net.Sockets;
@@ -9,6 +10,13 @@ namespace EchoClient
 {
     class Program
     {
+        private static long UnixTimestamp()
+        {
+            return DateTimeOffset.Now.ToUnixTimeSeconds();
+        }
+
+     
+
         static void Main(string[] args)
         {
             var client = new TcpClient();
@@ -18,10 +26,14 @@ namespace EchoClient
 
             var request = new Request
             {
-                Method = "read",
-                Path = "/categories",
-                Date = 1507318869,
-                Body = "hello"
+
+
+                Method = "delete",
+              
+                Date = UnixTimestamp(),
+                
+
+
             };
             //Validate recieved string first
             //Check if recieved string is a json 
@@ -48,5 +60,18 @@ namespace EchoClient
                 }
             } while (Console.ReadKey(true).Key != ConsoleKey.Escape);
         }
+    }
+    
+}
+
+
+
+
+public static class Util
+{
+    public static string ToJson(this object data)
+    {
+        return JsonConvert.SerializeObject(data,
+        new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
     }
 }

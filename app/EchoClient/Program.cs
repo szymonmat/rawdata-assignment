@@ -18,10 +18,10 @@ namespace EchoClient
 
             var request = new Request
             {
-                Method = "delete",
-                Path = "/categories/123",
+                Method = "read",
+                Path = "/api/categories",
                 Date = 1507318869,
-                Body = "hello"
+                Body = "{ cid: 3, name:'Test'}"
             };
             //Validate recieved string first
             //Check if recieved string is a json 

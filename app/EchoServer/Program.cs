@@ -38,11 +38,13 @@ namespace EchoServer
                 var response = new Response();
                 string errorString = "";
                 //local function that will break path into usable paramterers
-                string[] getPathValues(string path) {
+                List<string> getPathValues(string path) {
                     path = path.Substring(1, path.Length - 1);
-                    string[] values = path.Split('/');
-                    if (values.Length > 0)
+                    List<string> values = new List<string>(path.Split('/')) ;
+                    if (values.Count > 0)
                     {
+                       values.RemoveAt(0);
+
                         return values;
                     }
                     else {
@@ -100,21 +102,22 @@ namespace EchoServer
                 }
                 else
                 {
+                    //Get values from path
+                    var values = getPathValues(request.Path);
                     //Evaluate type of request, and execute appropriate code
                     switch (request.Method)
                     {
                         case "read":
-                            //Get values from path
-                            var values = getPathValues(request.Path);
+                           
                             //If there's only one value we assume that the user wasnt to select whole table
-                            if (values.Length == 1)
+                            if (values.Count == 1)
                             {
                                 var result = JsonConvert.SerializeObject(database);
                                 response.Status = "1 Ok";
                                 response.Body = result;
                             }
                             //With two values the user provides us id, so we can select correct value
-                            else if (values.Length == 2) {
+                            else if (values.Count == 2) {
                                 //First we check if second param is a valid int
                                 int val;
                                 bool eval = Int32.TryParse(values[1], out val);
@@ -149,15 +152,76 @@ namespace EchoServer
                             }
                             break;
                         case "update":
+                            //If there's only one value we assume that the user wasnt to select whole table
+                            if (values.Count == 1)
+                            {
+                                response.Status = "4 Bad Request";
+                                response.Body = "missing attribute cid";
+                            }
+                            //With two values the user provides us id, so we can select correct value
+                            else if (values.Count == 2)     
+                            {
+                                //First we check if second param is a valid int
+                                int val;
+                                bool eval = Int32.TryParse(values[1], out val);
+                                string result = null;
+                                //Loop through all objects in db and find one with appropriate id
+                                if (eval)
+                                {
+                                    for (var i = 0; i < database.Count; i++)
+                                    {
+                                        if (database[i].Cid == val)
+                                        {
+                                            Console.WriteLine(request.Body);
+                                            var newVal = JsonConvert.DeserializeObject<Category>(request.Body);
+                                            var newName = newVal.Name;
+                                            Console.Write(newVal.Cid);
+                                            Console.Write(database[i].Cid);
 
+                                            if (newVal.Cid == database[i].Cid)
+                                            {
+                                                Console.Write(database[i].Name);
+                                                database[i].Name = newName;
+                                                Console.Write(database[i].Name);
+                                                Console.Write(JsonConvert.SerializeObject(database));
+                                                result = "Ok";
+                                                break;
+                                            }
+                                        }
+                                        //If provided cid and edit request do not match, passs error message
+                                        else if (i == database.Count) {
+                                            result = null;
+                                        }
+                                    }
+                                    if (result != null)
+                                    {
+                                        response.Status = "3 Updated";
+                                        response.Body = "3 Updated";
+                                    }
+                                    else
+                                    {
+                                        response.Status = "5 Not Found";
+                                        response.Body = "5 cid not found";
+                                    }
+                                }
+                                else
+                                {
+                                    response.Status = "4 Bad Request";
+                                    response.Body = "4 illegal parameter: cid";
+                                }
+                            }
+
+                            else
+                            {
+                                response.Status = "4 Bad Request";
+                                response.Body = "illegal path";
+                            }
                             break;
                         case "create":
-
-                            var values2 = getPathValues(request.Path);
                             //The user only needs to select the whole table
                             if (request.Path.Contains("categories"))
                             {
-                                if (values2.Length == 1)
+                                if (values.Count == 1)
                                 {
                                     var newId = database[database.Count - 1].Cid + 1;
 
@@ -187,13 +251,12 @@ namespace EchoServer
 
                                 break;
                         case "delete":
-                              var values1 = getPathValues(request.Path);
 
-                            if (values1.Length == 2)
+                            if (values.Count == 2)
                             {
                                 //First we check if second param is a valid int
                                
-                                bool eval = Int32.TryParse(values1[1], out int val);
+                                bool eval = Int32.TryParse(values[1], out int val);
 
 
                                 //Loop through all objects in db and find one with appropriate id

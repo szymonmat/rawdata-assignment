@@ -1,2 +1,10 @@
 
 app/.vs/Livecode2/v15/Server/sqlite3/db.lock
+app/DomainModel/obj/project.assets.json
+app/DomainModel/obj/DomainModel.csproj.nuget.g.props
+app/DomainModel/obj/DomainModel.csproj.nuget.cache
+app/DomainModel/obj/Debug/netcoreapp2.0/DomainModel.csprojResolveAssemblyReference.cache
+app/DomainModel/obj/Debug/netcoreapp2.0/DomainModel.csproj.CoreCompileInputs.cache
+app/.vs/Livecode2/v15/Server/sqlite3/storage.ide-shm
+app/EchoClient/obj/Debug/netcoreapp2.0/EchoClient.csproj.CoreCompileInputs.cache
+app/EchoClient/obj/EchoClient.csproj.nuget.cache
